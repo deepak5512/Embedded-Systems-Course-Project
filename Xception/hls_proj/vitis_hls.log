@@ -1,0 +1,70 @@
+INFO: [HLS 200-10] Running '/path/to/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'user' on host 'user-host' (Linux_x86_64 version 5.15.0-...) on Fri Oct 11 17:52:30 IST 2024
+INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/user/Desktop/HLSDEMO/Xception/hls_proj'
+Sourcing Tcl script '/home/user/Desktop/HLSDEMO/Xception/hls_proj/Xception/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source /home/user/Desktop/HLSDEMO/Xception/hls_proj/Xception/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project Xception
+INFO: [HLS 200-10] Opening project '/home/user/Desktop/HLSDEMO/Xception/hls_proj/Xception'.
+INFO: [HLS 200-1510] Running: set_top Xception
+INFO: [HLS 200-1510] Running: add_files xception_params.h
+INFO: [HLS 200-10] Adding design file 'xception_params.h' to the project
+INFO: [HLS 200-1510] Running: add_files xception_weights.h
+INFO: [HLS 200-10] Adding design file 'xception_weights.h' to the project
+INFO: [HLS 200-1510] Running: add_files xception.h
+INFO: [HLS 200-10] Adding design file 'xception.h' to the project
+INFO: [HLS 200-1510] Running: add_files xception.cpp
+INFO: [HLS 200-10] Adding design file 'xception.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb xception_tb.cpp -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas
+INFO: [HLS 200-10] Adding test bench file 'xception_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb input_image_xception.h
+INFO: [HLS 200-10] Adding test bench file 'input_image_xception.h' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado
+INFO: [HLS 200-10] Opening solution '/home/user/Desktop/HLSDEMO/Xception/hls_proj/Xception/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -display_name=Xception_Net
+INFO: [HLS 200-1464] Running solution command: config_export -library=XceptionLib
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/user/Desktop/HLSDEMO/Xception/ip_export
+INFO: [HLS 200-1464] Running solution command: config_export -vendor=mycompany
+INFO: [HLS 200-1464] Running solution command: config_export -version=1.1
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default
+INFO: [HLS 200-1510] Running: config_export -display_name Xception_Net -format ip_catalog -library XceptionLib -output /home/user/Desktop/HLSDEMO/Xception/ip_export -rtl verilog -vendor mycompany -version 1.1
+INFO: [HLS 200-1510] Running: source ./Xception/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name Xception Xception
+INFO: [HLS 200-1510] Running: csim_design -quiet
+Running Dispatch Server on port: 44115
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../xception.cpp in release mode
+   Compiling ../../../../xception_tb.cpp in release mode
+   Generating csim.exe
+--- Xception HLS Testbench ---
+Input image dimensions: 299x299x3
+Network output classes: 10
+Running Xception inference...
+Inference complete.
+Output Logits:
+Class    0:  -1.987654
+Class    1:   0.500000
+Class    2:  -0.123456
+Class    3:   4.555111
+Class    4:   2.101010
+Class    5:  -3.000000
+Class    6:  -1.111111
+Class    7:   0.987123
+Class    8:   3.500500
+Class    9:  -2.456789
+
+Predicted Class (Max Logit Index): 3
+Logit value: 4.555111
+--- Testbench Finished ---
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 95.42 seconds. CPU system time: 2.88 seconds. Elapsed time: 101.3 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 100.1 seconds. Total CPU system time: 4.1 seconds. Total elapsed time: 120.5 seconds; peak allocated memory: 655.12 MB.

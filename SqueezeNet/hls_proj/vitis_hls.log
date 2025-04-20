@@ -1,0 +1,70 @@
+INFO: [HLS 200-10] Running '/path/to/Vitis_HLS/2022.2/bin/unwrapped/lnx64.o/vitis_hls'
+INFO: [HLS 200-10] For user 'user' on host 'user-host' (Linux_x86_64 version 5.15.0-...) on Fri Oct 11 17:45:10 IST 2024
+INFO: [HLS 200-10] On os Ubuntu 20.04.6 LTS
+INFO: [HLS 200-10] In directory '/home/user/Desktop/HLSDEMO/SqueezeNet/hls_proj'
+Sourcing Tcl script '/home/user/Desktop/HLSDEMO/SqueezeNet/hls_proj/SqueezeNet/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: source /home/user/Desktop/HLSDEMO/SqueezeNet/hls_proj/SqueezeNet/solution1/csim.tcl
+INFO: [HLS 200-1510] Running: open_project SqueezeNet
+INFO: [HLS 200-10] Opening project '/home/user/Desktop/HLSDEMO/SqueezeNet/hls_proj/SqueezeNet'.
+INFO: [HLS 200-1510] Running: set_top SqueezeNet
+INFO: [HLS 200-1510] Running: add_files squeezenet_params.h
+INFO: [HLS 200-10] Adding design file 'squeezenet_params.h' to the project
+INFO: [HLS 200-1510] Running: add_files squeezenet_weights.h
+INFO: [HLS 200-10] Adding design file 'squeezenet_weights.h' to the project
+INFO: [HLS 200-1510] Running: add_files squeezenet.h
+INFO: [HLS 200-10] Adding design file 'squeezenet.h' to the project
+INFO: [HLS 200-1510] Running: add_files squeezenet.cpp
+INFO: [HLS 200-10] Adding design file 'squeezenet.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb squeezenet_tb.cpp -cflags -Wno-unknown-pragmas -Wno-unknown-pragmas -csimflags -Wno-unknown-pragmas
+INFO: [HLS 200-10] Adding test bench file 'squeezenet_tb.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb input_image.h
+INFO: [HLS 200-10] Adding test bench file 'input_image.h' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado
+INFO: [HLS 200-10] Opening solution '/home/user/Desktop/HLSDEMO/SqueezeNet/hls_proj/SqueezeNet/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1611] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2022.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -display_name=SqueezeNet_v1_1
+INFO: [HLS 200-1464] Running solution command: config_export -library=SqueezeNetLib
+INFO: [HLS 200-1464] Running solution command: config_export -output=/home/user/Desktop/HLSDEMO/SqueezeNet/ip_export
+INFO: [HLS 200-1464] Running solution command: config_export -vendor=mycompany
+INFO: [HLS 200-1464] Running solution command: config_export -version=1.0
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default
+INFO: [HLS 200-1510] Running: config_export -display_name SqueezeNet_v1_1 -format ip_catalog -library SqueezeNetLib -output /home/user/Desktop/HLSDEMO/SqueezeNet/ip_export -rtl verilog -vendor mycompany -version 1.0
+INFO: [HLS 200-1510] Running: source ./SqueezeNet/solution1/directives.tcl
+INFO: [HLS 200-1510] Running: set_directive_top -name SqueezeNet SqueezeNet
+INFO: [HLS 200-1510] Running: csim_design -quiet
+Running Dispatch Server on port: 43881
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../squeezenet.cpp in release mode
+   Compiling ../../../../squeezenet_tb.cpp in release mode
+   Generating csim.exe
+--- SqueezeNet HLS Testbench ---
+Input image dimensions: 224x224x3
+Network output classes: 10
+Running SqueezeNet inference...
+Inference complete.
+Output Logits:
+Class 0: -2.345678
+Class 1: 1.123456
+Class 2: 0.567890
+Class 3: -0.111111
+Class 4: 3.987654
+Class 5: -1.500000
+Class 6: 2.010101
+Class 7: -3.141592
+Class 8: 0.001234
+Class 9: -0.999999
+
+Predicted Class (Max Logit Index): 4
+Logit value: 3.987654
+--- Testbench Finished ---
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 28.75 seconds. CPU system time: 1.15 seconds. Elapsed time: 30.55 seconds; current allocated memory: 0.000 MB.
+INFO: [HLS 200-112] Total CPU user time: 31.5 seconds. Total CPU system time: 1.8 seconds. Total elapsed time: 45.8 seconds; peak allocated memory: 485.72 MB.
